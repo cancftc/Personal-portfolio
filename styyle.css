@@ -24,12 +24,178 @@ header{
     background-color: white;
 }
 
-
-
 .container{
     max-width: 1600px;
     width: 100%;
     margin: 0 auto;
+}
+
+@media (max-width: 1600px){
+    
+    .portfolio-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .portfolio-wrapper .portfolio-item{
+        height: 200px;
+    }
+    .skills-wrapper .skills-item p{
+        font-size: 18px;
+    }
+    .about-wrapper .about-content{
+        font-size: 25px;
+      }
+
+      .about-wrapper img{
+        width: 500px;
+      }
+}
+
+@media (max-width: 1200px){
+    .container{
+      max-width: 992px;
+    }
+
+    .skills-wrapper .skills-item p{
+        font-size: 20px;
+    }
+    .portfolio-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -80px;
+    }
+
+    .portfolio-wrapper .portfolio-item{
+        margin-top: -30px;
+        height: 130px;
+    }
+    
+    .about-wrapper .about-content{
+        font-size: 20px;
+      }
+  }
+  
+  
+  @media (max-width: 992px){
+    .container{
+      max-width: 768px;
+    }
+
+    .about-wrapper{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .about-wrapper .about-content{
+        margin-top: 40px;
+        font-size: 23px;
+      }
+      .about-wrapper img{
+        height: 440px;
+      }
+
+      .skills-wrapper .skills-item{
+        width: 180px;
+      }
+
+      .skills-wrapper .skills-item p{
+        font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 768px){
+    .container{
+      max-width: 576px;
+      padding: 0px 27px;
+    }
+
+    .about-wrapper{
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .about-wrapper .about-content{
+        margin-top: 20px;
+        font-size: 20px;
+      }
+
+      .about-wrapper img{
+        width: 350px;
+        height: 350px;
+        margin-top: -40px;
+      }
+
+      .header-wrapper .header-rigth{
+        display: none;
+      }
+
+      .skills-wrapper{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .skills-wrapper .skills-item{
+        width: 450px;
+        height: 200px;
+        margin-top: 10px;
+        padding: 0px;
+      }
+      .skills-wrapper .skills-item img{
+        width: 60px;
+        padding-top: 10px;
+      }
+      .skills-wrapper .skills-item h1{
+        font-size: 20px;
+      }
+      .skills-wrapper .skills-item p{
+        font-size: 15px;
+        padding: 0px 10px;
+      }
+
+      .portfolio-wrapper{
+        margin-top: -80px;
+      }
+
+     .portfolio-wrapper .portfolio-item{
+        margin-top: -30px;
+        width: 300px;
+        height: 130px;
+      }
+
+      .contact-wrapper{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact-wrapper .contact-form .contact-item input{
+        width: 450px;
+      }
+
+      .contact-wrapper .contact-form .contact-item textarea{
+        width: 450px;
+      }
+
+      .contact-wrapper .contact-info{
+        margin-left: 130px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+  }
+
+  @media (max-width: 420px) {
+  .container {
+    max-width: 350px;
+  }
+  
+  .about-wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+
+
 }
 
 .header-wrapper{
@@ -52,13 +218,16 @@ header{
     font-size: 20px;
 }
 
-.homebc{
+.bcColor{
     background-color:#f5f3f3;
 }
 
 .home-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    padding-top: 300px;
 }
 
 .home-wrapper h7{
@@ -87,26 +256,19 @@ header{
 }
 
 .about-wrapper{
-    padding-top: 100px;
     height: 100vh;
     display: flex;
     align-items: center;
-    width: 50%;
+    gap: 100px;
+}
+
+.about-content{
     font-size: 30px;
 }
 
-.about-wrapper1{
-    display: flex;
-}
-
-.about-wrapper1 img{
-    padding-top: 220px;
-    padding-left: 130px;
-}
-
 .skills-wrapper{
-    display: flex;
     height: 100vh;
+    display: flex;
     gap: 25px;
     align-items: center;
 }
@@ -135,16 +297,17 @@ header{
     font-size: 25px;
 }
 
-.portfolio-container{
+.portfolio-wrapper{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    height: 100vh;
     gap: 40px;
     padding-top: 120px;
     padding-bottom: 120px;
 }
 
-.portfolio-container .portfolio-box{
+.portfolio-wrapper .portfolio-item{
     border: 1px solid #000;
     width: 506px;
     position: relative;
@@ -153,16 +316,16 @@ header{
     display: flex;
 }
 
-.portfolio-box img{
+.portfolio-item img{
     width: 100%;
     transition: .5s ease;
 }
 
-.portfolio-box:hover img{
+.portfolio-item:hover img{
     transform: scale(1.1);
 }
 
-.portfolio-box .portfolio-layer{
+.portfolio-item .portfolio-layer{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -174,12 +337,11 @@ header{
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 0 70px;
     transform: translateY(100%);
     transition: .5s ease;
 }
 
-.portfolio-box:hover .portfolio-layer{
+.portfolio-item:hover .portfolio-layer{
     transform: translateY(0);
 }
 
@@ -209,13 +371,10 @@ header{
 }
 
 .contact-wrapper{
-    padding-top: 150px;
-    height: 92vh;
+    height: 100vh;
     display: flex;
-}
-
-.contact-wrapper div{
-    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .contact-wrapper button{
@@ -225,9 +384,22 @@ header{
     color: white;
     margin-top: 20px;
     border: 1px solid #000;
+    cursor: pointer;
 }
 
-.contact-wrapper label{
+.contact-wrapper .contact-item{
+    margin: 10px 0;
+}
+
+.contact-wrapper .contact-item input{
+    margin: 10px 0;
+}
+
+.contact-wrapper .contact-item textarea{
+    margin: 10px 0;
+}
+
+.contact-wrapper .contact-item label{
     font-size: 20px;
 }
 
@@ -237,11 +409,16 @@ header{
     font-size: 20px;
 }
 
-.contact-wrapper .contactAdress{
-    font-size: 30px;
-    margin: 30px 100px;
+.contact-wrapper .contact-info{
+    margin-top: -370px;
+    margin-right: 350px;
 }
 
-.contact-wrapper .contactAdress p{
+.contact-wrapper .contact-info h4{
+    font-size: 40px;
+}
+
+.contact-wrapper .contact-info p{
     margin-top: 20px;
+    font-size: 30px;
 }
